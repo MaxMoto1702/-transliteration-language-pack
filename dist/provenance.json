@@ -1,0 +1,23 @@
+{
+  "format": "plain UTF-8 IntelliJ custom dictionary",
+  "upstream_repository": "https://github.com/Goudron/ru-spelling-dictionary",
+  "upstream_version": "v1.0.8",
+  "upstream_commit": "69a18ae079084f11569f5190ac2080289055ef5e",
+  "source_wordlist_url": "https://raw.githubusercontent.com/Goudron/ru-spelling-dictionary/69a18ae079084f11569f5190ac2080289055ef5e/cspell/dictionaries/ru_RU.txt.gz",
+  "source_wordlist_sha256": "3519d33eb85dc5d3821b9d1af7b33ef723579e72f4633d495d41762a4b7dd2b7",
+  "generated_word_count": 2324125,
+  "mapping": {
+    "zh": "ж",
+    "h": "х",
+    "c": "ц",
+    "ch": "ч",
+    "sh": "ш",
+    "sch": "щ",
+    "yu": "ю",
+    "ya": "я",
+    "yo": "ё",
+    "y": "й, ы",
+    "e": "э",
+    "omitted": "ь, ъ"
+  }
+}
