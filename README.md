@@ -8,7 +8,8 @@ For example, `horosho` is accepted, while `khorosho` is not.
 
 Готовые файлы публикуются в [GitHub Releases](../../releases) при push каждого
 тега. Скачайте `ru-translit.dic` из нужного релиза и подключите его по
-инструкции ниже.
+инструкции ниже. Каждый релиз содержит также файл provenance с версией и
+контрольной суммой исходного словаря.
 
 ## Настройка в IntelliJ IDEA
 
