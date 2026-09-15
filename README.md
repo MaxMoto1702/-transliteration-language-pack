@@ -4,15 +4,27 @@ This repository builds a strict, offline dictionary for IntelliJ IDEA spelling
 inspection. It accepts Russian words written with one canonical Latin mapping.
 For example, `horosho` is accepted, while `khorosho` is not.
 
-## Install
+## Настройка в IntelliJ IDEA
 
-1. Build the dictionary with `python3 scripts/build_dictionary.py`.
-2. In IntelliJ IDEA, open **Settings | Editor | Natural Languages | Spelling**.
-3. Click **+** and select `dist/ru-translit.dic`.
+1. Склонируйте репозиторий или скачайте файл
+   `dist/ru-translit.dic`. Чтобы создать его из исходников, выполните
+   `python3 scripts/build_dictionary.py` в корне проекта.
+2. Откройте настройки IDEA: **File | Settings** на Windows/Linux или
+   **IntelliJ IDEA | Settings** на macOS.
+3. Перейдите в **Editor | Natural Languages | Spelling**.
+4. В секции **Custom Dictionaries** нажмите **+** (или `Alt+Insert`) и
+   выберите файл `ru-translit.dic`.
+5. Нажмите **Apply**, затем **OK**. Если проверка орфографии была отключена,
+   включите inspection **Spelling** через **Editor | Inspections**.
 
-The dictionary is a plain UTF-8 `.dic` word list, which IDEA supports as a
-custom dictionary. It has no network access and does not replace IDEA's
-built-in English or Russian dictionaries.
+После установки откройте комментарий, строку или Markdown-файл: `horosho` и
+`privet` не будут подсвечены как ошибки, а `khorosho` останется опечаткой.
+Чтобы убрать словарь, вернитесь в **Custom Dictionaries**, выберите
+`ru-translit.dic` и нажмите **-** (или `Alt+Delete`).
+
+Это простой UTF-8 `.dic`, поддерживаемый IDEA как custom dictionary. Он
+работает локально, не отправляет текст в сеть и не заменяет встроенные
+английский или русский словари.
 
 ## Canonical transliteration
 
@@ -49,4 +61,3 @@ commit `69a18ae079084f11569f5190ac2080289055ef5e`. It is derived from the
 project's Russian Hunspell dictionary and distributed under MPL-2.0 with
 additional upstream notices. See `dist/NOTICE.md` and `dist/LICENSE-MPL-2.0.txt`
 after building.
-
