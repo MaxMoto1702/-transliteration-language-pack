@@ -1,0 +1,40 @@
+name: Build and publish dictionary
+
+on:
+  push:
+    tags:
+      - "*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out tagged source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Test generator
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Build dictionary
+        run: python3 scripts/build_dictionary.py
+
+      - name: Create GitHub Release and upload dictionary
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            dist/ru-translit.dic \
+            dist/LICENSE-MPL-2.0.txt \
+            dist/NOTICE.md \
+            dist/provenance.json \
+            --title "Russian transliteration dictionary $GITHUB_REF_NAME" \
+            --generate-notes

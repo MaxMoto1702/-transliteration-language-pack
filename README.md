@@ -4,6 +4,12 @@ This repository builds a strict, offline dictionary for IntelliJ IDEA spelling
 inspection. It accepts Russian words written with one canonical Latin mapping.
 For example, `horosho` is accepted, while `khorosho` is not.
 
+## Скачать готовый словарь
+
+Готовые файлы публикуются в [GitHub Releases](../../releases) при push каждого
+тега. Скачайте `ru-translit.dic` из нужного релиза и подключите его по
+инструкции ниже.
+
 ## Настройка в IntelliJ IDEA
 
 1. Склонируйте репозиторий или скачайте файл
